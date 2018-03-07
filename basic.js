@@ -1,79 +1,105 @@
 ﻿/**
  * Credit: Jubayer Al Farabi (Software Engineer @selise.ch)
- *
+ * 
  */
 
 
-
-"use strict"; //http://www.w3schools.com/js/js_strict.asp
+"use strict"; // http://www.w3schools.com/js/js_strict.asp
 //x=1; //error //x = x || [] ;
 
 /********************Object****************************/
 
-//var obj = ; //undefined,Number,Boolean,String
-//var obj2 = undefined; //[],'',1,true,null,
-//console.log('obj:', obj);
-//console.log('obj2:',obj2);
-//console.log('type of obj:',typeof obj); //typeof operator returns
-//console.log('type of obj2:',typeof obj2);
-//console.log('instance of obj:',obj instanceof Object);// is obj's constructor using Object's constructor function?
-//console.log('instance of obj2:',obj2 instanceof Object);// is obj's constructor using Object's constructor function?
-//console.log('constructor of obj',obj.constructor);// All objects have built-in constructor.
-//console.log('constructor of obj2',obj2.constructor); //read only property for primitive types.
-//Returns a reference to the Object function that created the instance's prototype.
+/**  Example 1 Starts Here */
 
-////Adding property to object======================================================================
-//var expression = 'address';
-//obj = {};
-//obj.firstName= 'firstname';
-//obj['lastName'] = 'lastname';
-//obj[expression] = 'this is address';
-//console.log(obj);
-//
-////loop on object
-//for(var key in obj){
-//    console.log(key);
-//    console.log(obj[key]);
-//}
+var obj; //undefined,Number,Boolean,String
+var obj2 = undefined; //[],'',1,true,null,
+console.log('obj:', obj);
+console.log('obj2:', obj2);
+console.log('type of obj:', typeof obj); //typeof operator returns
+console.log('type of obj2:', typeof obj2);
+console.log('instance of obj:', obj instanceof Object); // is obj's constructor using Object's constructor function?
+console.log('instance of obj2:', obj2 instanceof Object); // is obj's constructor using Object's constructor function?
+console.log('constructor of obj', obj.constructor); // All objects have built-in constructor.
+console.log('constructor of obj2', obj2.constructor); //read only property for primitive types.
+// Returns a reference to the Object
+// function that created the instance 's prototype.
 
-//delete property ////VERY BAD PRACTICE!!!! make the property undefined instead
-//delete obj.address;
-//obj.address = undefined;
-//delete obj['address'];
-//delete obj[expression];
-//console.log(obj);
+/** Example 1 Ends Here */
+
+//Adding property to object======================================================================
+
+/** Example 2 Starts Here */
+
+var expression = 'address';
+obj = {};
+obj.firstName = 'firstname';
+obj['lastName'] = 'lastname';
+obj[expression] = 'this is address';
+console.log(obj);
+
+//loop on object
+for (var key in obj) {
+    console.log(key);
+    console.log(obj[key]);
+}
+
+delete property //VERY BAD PRACTICE!!!! make the property undefined instead
+delete obj.address;
+obj.address = undefined;
+delete obj['address'];
+delete obj[expression];
+console.log(obj);
+
+/** Example 2 Ends Here */
+
 //========================================================================================
 
-// var value1 = 10, value2 = 20, object1 = {key:10} , object2 = {key:20};
+/** Example 3 Starts Here */
 
-// value1 = value2;
-// console.log(value1);
-// value1 = 30;
-// console.log(value2);
+var value1 = 10,
+    value2 = 20,
+    object1 = {
+        key: 10
+    },
+    object2 = {
+        key: 20
+    };
 
-// object1 = object2;
-// console.log(object1.key);
-// object1.key = 30;
-// console.log(object2.key);
-// object2 = {key:10};
-// console.log(object1.key);
+value1 = value2;
+console.log(value1);
+value1 = 30;
+console.log(value2);
 
-//
+object1 = object2;
+console.log(object1.key);
+object1.key = 30;
+console.log(object2.key);
+object2 = {
+    key: 10
+};
+console.log(object1.key);
 
-// var names = ["Jeremy", "John", "Adam", "Jeffrey", 'Jack'];
-// names = names.filter(function (name) {
-//     return name !== 'John'
-// }).map(function (name) {
-//     return {
-//         name: name
-//     }
-// }).sort(function (obj1, obj2) {
-//     return obj1.name > obj2.name
-// });
-// console.log(names);
-// var justAnArray = []
-// justAnArray[100] = 100;
-// console.log(justAnArray);
+/** Example 3 Ends Here */
+
+
+/** Example 4 Starts Here */
+
+var names = ["Jeremy", "John", "Adam", "Jeffrey", 'Jack'];
+names = names.filter(function (name) {
+    return name !== 'John'
+}).map(function (name) {
+    return {
+        name: name
+    }
+}).sort(function (obj1, obj2) {
+    return obj1.name > obj2.name
+});
+console.log(names);
+var justAnArray = []
+justAnArray[100] = 100;
+console.log(justAnArray);
+
+/** Example 4 Ends Here */
 
 //Array :: http://www.w3schools.com/jsref/jsref_obj_array.asp
 //String :: http://www.w3schools.com/jsref/jsref_obj_string.asp
@@ -81,8 +107,10 @@
 
 /***************************Functional Programming*****************/
 //===========================================================================================
-//declaration
-function function1(a, b) {
+
+/** Example 5 Starts Here */
+
+function function1(a, b) { // function declarition
     return a + b;
 }
 var function2 = function (a, b) {
@@ -93,8 +121,12 @@ console.log(function1(1, 2));
 console.log(function2(1, 2));
 console.log(function3(1, 2));
 
-//passing arguments===========================================================================
-var letsCheck = {
+/** Example 5 Ends Here */
+
+
+/** Example 6 Starts Here */
+
+var letsCheck = { // passing arguments
     name: 'isReference'
 }; //for objects it's passing the reference
 function passingObject(obj) {
@@ -106,12 +138,15 @@ function passingObject(obj) {
 passingObject(letsCheck);
 console.log(letsCheck.name);
 
-
 function args(ar) {
     console.log(arguments); //passed by value
 }
 args(1, 2, 3, 4, 5);
 
+/** Example 6 Ends Here */
+
+
+/** Example 7 Starts Here */
 
 var fn1 = function (getFn) {
     if (getFn) console.log(getFn(2));
@@ -122,9 +157,16 @@ var addTwo = function (value) {
 };
 fn1(addTwo);
 
+/** Example 7 Ends Here */
+
 /*****************************************Closure*******************************************/
 //=============================================================================================
 //Closure Begins ////////Don't panic it's simple
+
+
+
+/**  Example 8 Starts Here */
+
 var closure = function (fn1) {
     var count = 0;
 
@@ -134,8 +176,6 @@ var closure = function (fn1) {
     });
     console.log(count);
 };
-closure(fn1);
-
 
 var closure2 = function (value) {
     var counter = 0;
@@ -155,7 +195,13 @@ console.log(greet2('Guys?'));
 console.log(greet2('Amazing?'));
 
 
+/** Example 8 Ends Here */
+
+
 //Factory Constructor Function (If you hate the word new)=============================================================================
+
+
+/** Example 9 Starts Here */
 
 var factoryCounter = function (initVal) {
     var counter = initVal ? initVal : 0;
@@ -174,7 +220,6 @@ var factoryCounter = function (initVal) {
         }
     }
 };
-
 
 
 var counter1 = factoryCounter();
@@ -196,7 +241,14 @@ var mainBoard2 = function (Counter) {
 mainBoard(counter1);
 mainBoard2(counter1);
 
+/** Example 9 Ends Here */
+
+
+
 //Self-invoking functions==========================================================================
+
+/** Example 10 Starts Here */
+
 console.log(window.function3(1, 2)); //time to watch out
 
 (function selfInvoked(a, b) {
@@ -221,6 +273,8 @@ var module = (function () {
 }());
 
 console.log(module.moduleProperty);
+
+/** Example 10 Ends Here */
 
 /*********************************OOP in JavaScript (kind of)**************************************/
 
